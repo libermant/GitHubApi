@@ -1,0 +1,45 @@
+.user{
+    border: #000 7px solid;
+    width: 20%;
+    height: 350px;
+    margin-left: 1%; 
+    margin-right: 1%;   
+}
+img{
+    border-radius: 50%;
+    width: 40%;
+    margin: 4px 88px;
+}
+.login{
+    color: navy;
+    font-weight: 600;
+    font-size: 200%;
+    text-align: center;
+}
+.Created{
+    color: rgb(88, 86, 86);
+    font-weight: 400;
+    font-size: 150%;
+    text-align: center;
+}
+.repos{
+    border: navy 1px solid;
+    background-color: navy;
+    height: 29%;
+    margin-top: 6%;
+}
+.public{
+    color: #fff;
+    font-weight: 500;
+    font-size: 180%;
+    text-align: center;
+}
+.Repositories{
+    color: rgb(97, 97, 109);
+    font-weight: 300;
+    font-size: 120%;
+    text-align: center; 
+}
+.clear{
+    width: 100%;
+}
