@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Sort.css";
 
-const Sort = ({ users, setGitUser, setSortBy, sortBy }) => {
-  //const[sortBy,setSortBy]=useState("")
+const Sort = ({ users, setSortBy, sortBy}) => {
+  let o;
+  const [by, setBy] = useState("");
+  console.log(by);
 
   function sortDate(a, b) {
     var dateA = new Date(a.created_at).getTime();
@@ -37,22 +39,25 @@ const Sort = ({ users, setGitUser, setSortBy, sortBy }) => {
         console.log(users);
         break;
     }
+
+    setBy(sortOption);
+    setSortBy(JSON.stringify(sortBy));
+    console.log(sortBy);
   };
 
   return (
     <div className="sort">
       <h1>Sort by</h1>
       <select
-       value={sortBy}
+        value={by}
         onChange={(e) => {
-          sortManager(e.target.value);
-        //   setGitUser("");
+          sortManager(e.target.value);          
         }}
       >
         <option value=""></option>
-        <option value="Date">Date</option>
-        <option value="Name">Name</option>
-        <option value="Repositories">Repositories</option>
+        <option>Date</option>
+        <option>Name</option>
+        <option>Repositories</option>
       </select>
     </div>
   );

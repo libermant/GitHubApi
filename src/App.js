@@ -11,18 +11,21 @@ function App() {
   const [searchUser, setSearchUser] = useState("");
   const [users, setUsers] = useState([]);
   const [isSearched, setIsSearched] = useState(false);
-  const [sortBy, setSortBy] = useState("");
+  const [sortBy, setSortBy] = useState([]);
 
   //npm i axios
 
   useEffect(() => {
     try {
+      console.log(sortBy);
       async function fetchData() {
+        console.log("llll");
         const gitHubApiUl = `https://api.github.com/users/${searchUser}`;
         if (searchUser === "") return;
         const { data } = await axios.get(gitHubApiUl);
         const { avatar_url, created_at, login, public_repos } = data;
         setUsers([...users, { avatar_url, created_at, login, public_repos }]);
+        console.log(sortBy);
       }
       fetchData();
     } catch (e) {
@@ -31,8 +34,9 @@ function App() {
   }, [searchUser]);
 
   useEffect(() => {
-    console.log("sort changed", sortBy);
+    console.log("aaaaaaa", sortBy);
   }, [sortBy]);
+
 
   return (
     <>
@@ -59,8 +63,6 @@ function App() {
 
       <Sort
         users={users}
-        setGitUser={setGitUser}
-        gitUser={gitUser}
         sortBy={sortBy}
         setSortBy={setSortBy}
       />
